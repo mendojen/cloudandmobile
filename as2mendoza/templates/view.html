@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+<title>View</title>
+</head>
+<body>
+	<section>
+		<h2>View Information</h2>
+				
+ 				<div class="channels">Name: {{ channel.name }}</div>
+				<div class="channels">URL: {{ channel.url }}</div>
+				<div class="channels">Age: {{ channel.age }}</div>
+				<div class="channels">Alien Believer? {{ channel.check }}</div>
+				<div class="channels">Genre:</div>
+				<legend>Genre: </legend>
+				{% if classes|length > 0 %}
+				<fieldset>
+					<legend>Genres</legend>
+					{% for c in classes %}
+					<label>{{ c.name }} </label><input type="checkbox" name="classes[]" value="{{ c.key }}" {% if c.checked %} checked="{{ c.checked }}" {% endif %}>
+				{% endfor %}
+				</fieldset>
+	{% endif %}
+	</section>
+	<form action="/admin">
+		<input type="submit" value="Back">
+	</form>
+</body>
+</html>
