@@ -7,6 +7,7 @@
 <body>
 	<h2>Edit Details</h2>
 	<p>
+	<form action="/edit/channel" method="POST" enctype="multipart/form-data">
  	<legend>Name</legend>
 	<input type="text" name="channel-name" value="{{ channel.name }}">
  	<legend>URL:</legend>
@@ -24,9 +25,9 @@
 			{% endfor %}
 	</fieldset>
 	{% endif %}
-	<form action="/edit/channel" method='post'enctype="multipart/form-data">
-		<input type="hidden" name="key" value="{{ channel.key.urlsafe()}}">
-		<input type="submit" value="Update">
+	
+		<input type="hidden" name="key" value="{{ channel.key.urlsafe() }}">
+		<input type="submit" name="action" value="Update">
 	</form>
 	<form action="/admin">
 		<input type="submit" value="Back">
