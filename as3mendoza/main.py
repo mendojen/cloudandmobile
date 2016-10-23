@@ -22,8 +22,8 @@ app = webapp2.WSGIApplication([
 ], debug=True)
 #app.router.add(webapp2.Route(r'/illness','classes.IllnessHandler'))
 app.router.add(webapp2.Route(r'/illness/<id:[0-9]+><:/?>','classes.IllnessHandler'))
-#app.router.add(webapp2.Route(r'/patient','classes.PatientHandler'))
-#app.router.add(webapp2.Route(r'/patient/<cid:[0-9]+>/illness/<mid:[0-9]+><:/?>','classes.PatientHandler'))
+app.router.add(webapp2.Route(r'/patient','classes.patientHandler'))
+app.router.add(webapp2.Route(r'/patient/<cid:[0-9]+>/illness/<mid:[0-9]+><:/?>','classes.patientIllness'))
 
 
 
